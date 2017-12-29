@@ -112,7 +112,7 @@ bool isDayLight(TimeElements tm, float zenith, double latitude, double longitude
   Serial.print("SunRise = "); Serial.print((int)RT_rise); Serial.print(":"); Serial.print((int)(60 * (RT_rise - floor(RT_rise)))); Serial.println(";");
   Serial.print("SunSet = ");  Serial.print((int)RT_set);  Serial.print(":"); Serial.print((int)(60 * (RT_set - floor(RT_set)))); Serial.println(";");
 
-  return (currTime > RT_rise) || (currTime < RT_set); // check tome zone!!!
+  return (currTime > RT_rise) && (currTime < RT_set); // check tome zone!!!
 }
 
 int calculateDayOfYear(int day, int month, int year) {
